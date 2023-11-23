@@ -1,0 +1,179 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.font-family-outfit {
+	font-family: Outfit;
+}
+
+.font-family-satisfy {
+	font-family: Satisfy;
+}
+
+.font__family--inter {
+	font-family: Inter;
+}
+
+.font__family--inter-400 {
+	font-family: Inter400;
+}
+
+.list-style--none {
+	list-style-type: none;
+}
+
+/* Width
+------------------------------------------------------------------------------*/
+
+.width--full {
+	width: $full-width !important;
+}
+
+.width--full-viewport {
+	width: $full-viewport-width;
+}
+
+.max-width--half {
+	max-width: 50%;
+}
+
+/* Height
+------------------------------------------------------------------------------*/
+
+.height--full {
+	height: $full-height;
+}
+
+.height--full-viewport {
+	height: $full-viewport-height;
+}
+.height--fit-content {
+	height: fit-content !important;
+}
+
+/* Show & Hide class
+--------------------------------------------------------------------------------------*/
+
+.hide {
+	display: none;
+}
+
+.show {
+	display: block;
+}
+
+.flex {
+	display: flex;
+	align-items: center;
+}
+
+.display-flex {
+	display: flex;
+}
+
+.flex-direction--column {
+	flex-direction: column;
+}
+
+.flex-direction--row {
+	flex-direction: row;
+}
+
+.justify__content--center {
+	justify-content: center;
+}
+
+.justify__content--end {
+	justify-content: flex-end;
+}
+
+.justify-content--around {
+	justify-content: space-around;
+}
+
+.justify-content__between {
+	justify-content: space-between;
+}
+
+.flex_align--end {
+	display: flex;
+	align-items: flex-end;
+}
+
+/* text-align
+------------------------------------------------------------------------------*/
+.text--left {
+	text-align: left;
+}
+
+.text--right {
+	text-align: right;
+}
+
+.text--center {
+	text-align: center;
+}
+
+/* Float 
+------------------------------------------------------------------------------*/
+.float-left {
+	float: left;
+}
+
+.float-right {
+	float: right;
+}
+
+/* Font Weight 
+------------------------------------------------------------------------------*/
+
+.font--light {
+	font-weight: $font-light;
+}
+
+.font--regular {
+	font-weight: $font-regular;
+}
+
+.font--medium {
+	font-weight: $font-medium;
+}
+
+.font--semi-bold {
+	font-weight: $font-semi-bold;
+}
+
+.font--bold {
+	font-weight: $font-bold;
+}
+
+.font--extra-bold {
+	font-weight: $font-extra-bold;
+}
+
+.font--heavy {
+	font-weight: $font-heavy;
+}
+
+.font--extra-heavy {
+	font-weight: $font-extra-heavy;
+}
+
+/* cursor 
+-----------------------------------------------------------------*/
+
+.cursor--auto {
+	cursor: auto;
+}
+
+.cursor--pointer {
+	cursor: pointer;
+}
+
+/* Border
+-----------------------------------------------------------------*/
+.border--none {
+	border: none;
+}

@@ -1,0 +1,128 @@
+.main__wrapper {
+	.heading__wrapper {
+		margin: 20px;
+		.products-heading {
+			color: $black;
+			font-size: 50px;
+		}
+	}
+
+	.menu__wrap {
+		height: 100px;
+		margin-bottom: 55px;
+		.menu__options {
+			gap: 10px;
+			.css-1u9des2-indicatorSeparator {
+				display: none !important;
+			}
+		}
+	}
+
+	.all-products {
+		.product-carousel__wrapper {
+			width: 258px;
+			height: 233px;
+			padding: 0px 15px 42px 12px;
+			border-radius: 50px;
+			background: #ffffff03;
+			box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25),
+				0px 4px 4px 0px rgba(0, 0, 0, 0.25) inset;
+			margin-top: 25px;
+
+			&:hover {
+				box-shadow: 0px -4px 15px #222222, 0px 4px 15px #222222;
+				border: none;
+				transition: 1s;
+			}
+		}
+
+		.product-info {
+			.product-info__wrapper {
+				padding-left: 10px;
+				margin-bottom: 3px;
+				.product__name,
+				.product__price {
+					font-family: $Inter;
+					font-size: 10px;
+					letter-spacing: 0.4px;
+				}
+			}
+
+			.product__type__wrapper {
+				.product__type {
+					color: $black;
+					opacity: 0.5;
+					font-family: $Inter;
+					font-size: 10px;
+					letter-spacing: 0.4px;
+					opacity: 0.5;
+					padding-left: 10px;
+				}
+				.product__category {
+					font-weight: 600 !important;
+				}
+			}
+		}
+
+		.allProduct--slick__carousel {
+			max-width: 90%;
+			.slick-slide {
+				display: flex !important;
+				flex-direction: column;
+				align-items: center;
+				justify-content: center;
+				gap: 60px;
+			}
+			.slick-list {
+				overflow: hidden;
+				min-height: 600px;
+			}
+		}
+
+		.products__list {
+			flex-wrap: wrap;
+			column-gap: 20px;
+
+			.product-carousel__wrapper {
+				margin: 25px;
+			}
+		}
+	}
+}
+
+.slick-prev:before,
+.slick-next:before {
+	content: '' !important;
+}
+
+.slick-prev {
+	left: -67px !important;
+	top: 40% !important;
+}
+
+.slick-next {
+	right: -67px !important;
+	top: 46% !important;
+	transform: rotate(180deg) !important;
+}
+
+.reset__productFIlter {
+	width: 137px;
+	height: 42px;
+	border-radius: 20px;
+	color: $yellow;
+	background-color: $black;
+	border: 2px solid $yellow;
+	font-weight: 900;
+	font-size: 15px;
+	box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+	margin-left: 20px;
+	border-radius: 2.5rem;
+
+	&:hover {
+		background: $yellow;
+		color: $black;
+		border: 2px solid $black;
+		transition: 1s;
+	}
+}

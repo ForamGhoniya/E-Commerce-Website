@@ -1,0 +1,146 @@
+[
+	{
+		"id": "0",
+		"imageUrl": "NikeAir",
+		"productName": "Nike Air Force 1 07",
+		"productPrice": "7,495.00",
+		"productType": "Women Shoes",
+		"productCategory": "nike",
+		"genderType": "female"
+	},
+	{
+		"id": "1",
+		"imageUrl": "NikeP",
+		"productName": "Nike P-6000",
+		"productPrice": "7,995.00",
+		"productType": "Mens Shoes",
+		"productCategory": "nike",
+		"genderType": "male"
+	},
+	{
+		"id": "2",
+		"imageUrl": "NikeAirMax",
+		"productName": "SAVVY White",
+		"productPrice": "8,595.00",
+		"productType": "Mens Shoes",
+		"productCategory": "campus",
+		"genderType": "male"
+	},
+	{
+		"id": "3",
+		"imageUrl": "NikeESeris",
+		"productName": "SOFTRIDE Finesse",
+		"productPrice": "8,595.00",
+		"productType": "Women Shoes",
+		"productCategory": "puma",
+		"genderType": "female"
+	},
+	{
+		"id": "4",
+		"imageUrl": "NikeWaffle",
+		"productName": "GEMINI Navy",
+		"productPrice": "5,695.00",
+		"productType": "Mens Shoes",
+		"productCategory": "campus",
+		"genderType": "male"
+	},
+	{
+		"id": "5",
+		"imageUrl": "Tatum",
+		"productName": "TRES-AIR",
+		"productPrice": "15,695.00",
+		"productType": "Mens Shoes",
+		"productCategory": "skechers",
+		"genderType": "male"
+	},
+	{
+		"id": "6",
+		"imageUrl": "NikeAirForce",
+		"productName": "Pure XT",
+		"productPrice": "9,695.00",
+		"productType": "Women Shoes",
+		"productCategory": "puma",
+		"genderType": "female"
+	},
+	{
+		"id": "7",
+		"imageUrl": "NikeK",
+		"productName": "KOOPA",
+		"productPrice": "19,695.00",
+		"productType": "Mens Shoes",
+		"productCategory": "skechers",
+		"genderType": "male"
+	},
+	{
+		"id": "8",
+		"imageUrl": "NikeAirForce",
+		"productName": "VAST Grey",
+		"productPrice": "7,495.00",
+		"productType": "Women Shoes",
+		"productCategory": "campus",
+		"genderType": "female"
+	},
+	{
+		"id": "9",
+		"imageUrl": "NikeP",
+		"productName": "ARCH FIT",
+		"productPrice": "7,995.00",
+		"productType": "Mens Shoes",
+		"productCategory": "skechers",
+		"genderType": "male"
+	},
+	{
+		"id": "10",
+		"imageUrl": "NikeAirMax",
+		"productName": "Court Rider 2.0",
+		"productPrice": "8,595.00",
+		"productType": "Mens Shoes",
+		"productCategory": "puma",
+		"genderType": "male"
+	},
+	{
+		"id": "11",
+		"imageUrl": "NikeESeris",
+		"productName": "Nike E-Series 1.0",
+		"productPrice": "8,595.00",
+		"productType": "Mens Shoes",
+		"productCategory": "nike",
+		"genderType": "male"
+	},
+	{
+		"id": "12",
+		"imageUrl": "NikeWaffle",
+		"productName": "UNO-STAND ON AIR",
+		"productPrice": "5,695.00",
+		"productType": "Women Shoes",
+		"productCategory": "skechers",
+		"genderType": "female"
+	},
+	{
+		"id": "13",
+		"imageUrl": "Tatum",
+		"productName": "Tatum1 Home-Team",
+		"productPrice": "15,695.00",
+		"productType": "Women Shoes",
+		"productCategory": "nike",
+		"genderType": "female"
+	},
+	{
+		"id": "14",
+		"imageUrl": "NikeAirForce",
+		"productName": "Grip Fusion Pro",
+		"productPrice": "9,695.00",
+		"productType": "Mens Shoes",
+		"productCategory": "puma",
+		"genderType": "male"
+	},
+	{
+		"id": "15",
+		"imageUrl": "NikeK",
+		"productName": "KAIUS White",
+		"productPrice": "19,695.00",
+		"productType": "Women Shoes",
+		"productCategory": "campus",
+		"genderType": "female"
+	}
+]
