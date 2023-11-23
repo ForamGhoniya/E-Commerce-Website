@@ -37,7 +37,7 @@ export const Testimonials = () => {
 	};
 
 	return (
-		<div className="user-reviews__wrap width-full flex justify-content__between">
+		<div className="user-reviews__wrap width-full flex justify__content--between flex-direction___row">
 			{userReviews.map((review, index) => (
 				<UserReview
 					key={index}

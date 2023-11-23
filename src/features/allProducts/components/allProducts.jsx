@@ -43,14 +43,14 @@ const AllProductItem = ({ product }) => {
 			</div>
 
 			<div className="product-info width--full">
-				<div className="product-info__wrapper flex width--full justify-content__between">
+				<div className="product-info__wrapper flex width--full justify__content--between">
 					<p className="product__name">{product.productName}</p>
 					<p className="product__price">
 						MRP : ₹ {product.productPrice}
 					</p>
 				</div>
 
-				<div className="product__type__wrapper width--full flex justify-content__between">
+				<div className="product__type__wrapper width--full flex justify__content--between">
 					<p className="product__type">{product.productType}</p>
 					<p className="product__category">
 						{product.productCategory}

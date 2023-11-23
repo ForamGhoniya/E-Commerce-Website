@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 
 import NikeAir from '../../../assets/images/Nike-Air-Force.png';
 import NikeAirMax from '../../../assets/images/Nike-Air-Max.png';
@@ -8,8 +8,11 @@ import NikeP from '../../../assets/images/Nike-p.png';
 import NikeESeris from '../../../assets/images/Nike-E-Series.png';
 import Tatum from '../../../assets/images/Tatum-1.png';
 import NikeK from '../../../assets/images/KD16-EP.png';
+import Popup from './openPopUp';
 
 const ProductItem = ({ product }) => {
+	const [showPopup, setShowPopup] = useState(false);
+
 	const imageMapper = {
 		NikeAir: NikeAir,
 		NikeAirMax: NikeAirMax,
@@ -21,8 +24,15 @@ const ProductItem = ({ product }) => {
 		NikeK: NikeK,
 	};
 
+	const togglePopup = () => {
+		setShowPopup(!showPopup);
+	};
+
 	return (
-		<div className="flex carousel__wrapper justify__content--center border-none flex-direction--column cursor--pointer">
+		<div
+			className="flex carousel__wrapper justify__content--center border-none flex-direction--column cursor--pointer"
+			onClick={togglePopup}
+		>
 			<div className="carousel-images__wrapper flex justify__content--center">
 				<img
 					src={imageMapper[product.imageUrl]}
@@ -39,6 +49,16 @@ const ProductItem = ({ product }) => {
 				<button className="size__button cursor--pointer">S</button>
 				<button className="size__button cursor--pointer">M</button>
 				<button className="size__button cursor--pointer">L</button>
+			</div>
+
+			<div className="popUp__wrap">
+				{showPopup && (
+					<Popup
+						text="Pop Up"
+						closePopup={togglePopup}
+						product={product}
+					/>
+				)}
 			</div>
 		</div>
 	);

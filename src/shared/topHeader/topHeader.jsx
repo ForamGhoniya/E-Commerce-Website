@@ -8,7 +8,7 @@ const TopHeader = (props) => {
 	return (
 		<>
 			<nav className="navbar flex justify__content--center width--full">
-				<div className="nav-container flex justify-content__between width--full">
+				<div className="nav-container flex justify__content--between width--full">
 					<div
 						className="logo cursor--pointer"
 						onClick={() => navigate('/dashboard')}
