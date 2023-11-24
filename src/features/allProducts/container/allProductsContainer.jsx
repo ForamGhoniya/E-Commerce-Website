@@ -4,6 +4,7 @@ import DropDown from '../../allProducts/components/dropDown';
 import ProductCarousel from '../components/allProductsCarousel';
 import JSONDATA from '../../../JSON/PRODUCT.json';
 import Spinner from '../../../shared/spinner/spinner';
+import { isEmpty } from 'lodash';
 
 const AllProductsContainer = () => {
 	const [loading, setLoading] = useState(true);
@@ -12,7 +13,6 @@ const AllProductsContainer = () => {
 	const [selectedPrice, setSelectedPrice] = useState('');
 	const [selectedCategory, setSelectedCategory] = useState('');
 	const [filteredProducts, setFilteredProducts] = useState([]);
-	const [noProductMessage, setNoProductMessage] = useState('');
 
 	const fetchData = async () => {
 		try {
@@ -51,7 +51,6 @@ const AllProductsContainer = () => {
 		setSelectedPrice('');
 		setSelectedCategory('');
 		setFilteredProducts(productData);
-		setNoProductMessage('');
 	};
 
 	const filterProducts = (gender, price, category) => {
@@ -69,14 +68,7 @@ const AllProductsContainer = () => {
 					category.toLowerCase();
 			return isGenderMatch && isPriceMatch && isCategoryMatch;
 		});
-
-		if (filteredProduct.length === 0) {
-			setNoProductMessage('No Product Found');
-			setFilteredProducts([]);
-		} else {
-			setNoProductMessage('');
-			setFilteredProducts(filteredProduct);
-		}
+		setFilteredProducts(filteredProduct);
 	};
 
 	return (
@@ -101,21 +93,20 @@ const AllProductsContainer = () => {
 			</div>
 
 			<div className="all-products width--full flex justify__content--center">
-				{loading ? (
+				{loading && (
 					<div className="loader__wrapper width--full flex justify__content--center">
 						<Spinner />
 					</div>
-				) : (
+				)}
+
+				{!loading && isEmpty(filteredProducts) && (
 					<div className="all-products-loader width--full flex justify__content--center">
-						{noProductMessage ? (
-							<p className="not-found__massage">
-								{noProductMessage}
-							</p>
-						) : (
-							<ProductCarousel products={filteredProducts} />
-						)}
+						<p className="not-found__massage">
+							{'No Found Product'}
+						</p>
 					</div>
 				)}
+				{!loading && <ProductCarousel products={filteredProducts} />}
 			</div>
 		</div>
 	);

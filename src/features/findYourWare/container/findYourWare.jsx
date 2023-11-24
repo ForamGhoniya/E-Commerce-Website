@@ -31,42 +31,40 @@ const FindYourWare = () => {
 	}, []);
 
 	return (
-		<>
-			<div className="main__wrapper dashboard">
-				{loading ? (
-					<Spinner />
-				) : (
-					<div className="logo">
-						<TopHeader menu={[]} titleClassName="font--bold" />
-					</div>
-				)}
-
-				<div className="heading__wrapper">
-					{loading ? (
-						<div className="loader__wrapper width--full flex justify__content--center">
-							<Spinner />
-						</div>
-					) : (
-						<h1 className="main__heading font--heavy text--center ">
-							Find your Perfect Wear
-						</h1>
-					)}
-				</div>
-
-				<div className="find-ware width--full display-flex justify__content--end flex-direction--column ">
-					<MyCarousel products={productData} />
-				</div>
-
-				<div className="product-button__wrapper flex justify__content--center">
-					<button
-						className="product-button cursor--pointer border--none"
-						onClick={handleNextPageClick}
-					>
-						ALL PRODUCTS
-					</button>
-				</div>
+		<div className="main__wrapper dashboard">
+			<div className="logo">
+				<TopHeader menu={[]} titleClassName="font--bold" />
 			</div>
-		</>
+
+			<div className="heading__wrapper">
+				<h1 className="main__heading font--heavy text--center ">
+					Find your Perfect Wear
+				</h1>
+			</div>
+
+			{loading && (
+				<div className="loader__wrapper width--full flex justify__content--center">
+					<Spinner />
+				</div>
+			)}
+
+			{!loading && (
+				<>
+					<div className="find-ware width--full display-flex justify__content--end flex-direction--column ">
+						<MyCarousel products={productData} />
+					</div>
+
+					<div className="product-button__wrapper flex justify__content--center">
+						<button
+							className="product-button cursor--pointer border--none"
+							onClick={handleNextPageClick}
+						>
+							ALL PRODUCTS
+						</button>
+					</div>
+				</>
+			)}
+		</div>
 	);
 };
 

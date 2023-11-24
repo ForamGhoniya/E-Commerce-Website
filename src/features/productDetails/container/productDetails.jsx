@@ -22,10 +22,6 @@ const ProductDetails = () => {
 	const [productData, setProductData] = useState({});
 
 	const { id } = useParams();
-	console.log(
-		'🚀 ~ file: productDetails.jsx:19 ~ ProductDetails ~ productId:',
-		id
-	);
 
 	const fetchData = () => {
 		try {
@@ -35,7 +31,6 @@ const ProductDetails = () => {
 				setLoading(false);
 			}, 1000);
 		} catch (error) {
-			console.error('Error fetching data:', error);
 			setLoading(false);
 		}
 	};
@@ -56,23 +51,21 @@ const ProductDetails = () => {
 	};
 
 	return (
-		<>
-			<div className="main__wrapper dashboard">
-				<div className="logo">
-					<TopHeader menu={[]} />
-				</div>
+		<div className="main__wrapper dashboard">
+			<div className="logo">
+				<TopHeader menu={[]} />
+			</div>
 
-				<div
-					className="back-arrow cursor--pointer"
-					onClick={() => navigate(-1)}
-				>
-					<BackArrow />
-				</div>
+			<div
+				className="back-arrow cursor--pointer"
+				onClick={() => navigate(-1)}
+			>
+				<BackArrow />
+			</div>
 
+			<div className="container">
 				<div className="product-image__wrap loader__position">
-					{loading ? (
-						<Spinner />
-					) : (
+					{!loading && (
 						<img
 							src={imageMapper[productData.imageUrl]}
 							alt="product"
@@ -80,13 +73,13 @@ const ProductDetails = () => {
 						/>
 					)}
 				</div>
-
-				<div className="container ">
-					{loading ? (
-						<div className="loader__wrapper width--full flex justify__content--center">
-							<Spinner />
-						</div>
-					) : (
+				{loading && (
+					<div className="loader__wrapper width--full flex justify__content--center">
+						<Spinner />
+					</div>
+				)}
+				{!loading && (
+					<>
 						<div className="product-detail__wrap">
 							<div className="product-detail-title">
 								<h1 className="product--name__display">
@@ -101,17 +94,14 @@ const ProductDetails = () => {
 								<p className="details">
 									Step into good shoes, and you'll embark on a
 									journey to incredible destinations.
-								</p>
-								<p className="details">
+									<br />
 									Your choice of footwear isn't just about
 									comfort;
-								</p>
-								<p className="details">
+									<br />
 									it's a passport to adventure. So, lace up
 									your dreams and stride towards a world of
 									endless possibilities,
-								</p>
-								<p className="details">
+									<br />
 									one stylish step at a time.
 								</p>
 							</div>
@@ -122,12 +112,7 @@ const ProductDetails = () => {
 								</button>
 							</div>
 						</div>
-					)}
-
-					<div className="product-reviews__wrap">
-						{loading ? (
-							<Spinner />
-						) : (
+						<div className="product-reviews__wrap">
 							<div className="user-reviews__wrap width--full">
 								<div className="product__reviews">
 									<h1 className="review__title">
@@ -136,11 +121,11 @@ const ProductDetails = () => {
 								</div>
 								<Testimonials />
 							</div>
-						)}
-					</div>
-				</div>
+						</div>
+					</>
+				)}
 			</div>
-		</>
+		</div>
 	);
 };
 
