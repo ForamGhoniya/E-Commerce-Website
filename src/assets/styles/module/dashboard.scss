@@ -1,5 +1,4 @@
 .dashboard {
-	position: relative;
 	width: $full-width;
 	height: $full-viewport-height;
 	background-color: $black;
@@ -30,20 +29,17 @@
 	}
 
 	.top__dots--icon {
-		position: absolute;
 		right: 40%;
 		top: 60px;
 		transform: rotate(-90deg);
 	}
 
 	.left-dots__icon {
-		position: absolute;
 		bottom: 47%;
 		left: 60px;
 	}
 
 	.right-dots__icon {
-		position: absolute;
 		bottom: 25%;
 		right: 0px;
 	}

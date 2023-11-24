@@ -31,7 +31,7 @@ const FindYourWare = () => {
 	}, []);
 
 	return (
-		<div className="main__wrapper dashboard">
+		<div className="main__wrapper dashboard position--relative">
 			<div className="logo">
 				<TopHeader menu={[]} titleClassName="font--bold" />
 			</div>

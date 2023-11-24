@@ -23,13 +23,13 @@ const Popup = ({ product, closePopup }) => {
 	};
 
 	return (
-		<div className="popup">
+		<div className="popup__overlay">
 			<div className="close--button_wrap">
 				<button className="close__button" onClick={closePopup}>
 					<Close />
 				</button>
 			</div>
-			<div className="popup_inner flex justify--content__center flex-direction--column">
+			<div className="popup_inner flex justify__content--center flex-direction--column">
 				<div className="carousel-images__wrapper flex justify__content--center">
 					<img
 						src={imageMapper[product.imageUrl]}

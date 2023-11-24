@@ -72,7 +72,7 @@ const AllProductsContainer = () => {
 	};
 
 	return (
-		<div className="main__wrapper dashboard">
+		<div className="main__wrapper dashboard position--relative">
 			<div className="logo">
 				<TopHeader menu={[]} />
 			</div>
@@ -102,7 +102,7 @@ const AllProductsContainer = () => {
 				{!loading && isEmpty(filteredProducts) && (
 					<div className="all-products-loader width--full flex justify__content--center">
 						<p className="not-found__massage">
-							{'No Found Product'}
+							{'No Found Product '}
 						</p>
 					</div>
 				)}

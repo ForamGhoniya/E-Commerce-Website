@@ -51,13 +51,13 @@ const ProductDetails = () => {
 	};
 
 	return (
-		<div className="main__wrapper dashboard">
+		<div className="main__wrapper dashboard position--relative">
 			<div className="logo">
 				<TopHeader menu={[]} />
 			</div>
 
 			<div
-				className="back-arrow cursor--pointer"
+				className="back-arrow cursor--pointer position--absolute"
 				onClick={() => navigate(-1)}
 			>
 				<BackArrow />
@@ -65,7 +65,7 @@ const ProductDetails = () => {
 
 			<div className="container">
 				{!loading && (
-					<div className="product-image__wrap loader__position">
+					<div className="product-image__wrap  position--absolute loader__position">
 						<img
 							src={imageMapper[productData.imageUrl]}
 							alt="product"
@@ -113,7 +113,7 @@ const ProductDetails = () => {
 							</div>
 						</div>
 						<div className="product-reviews__wrap">
-							<div className="user-reviews__wrap width--full">
+							<div className="user-reviews__wrap width--full position--relative">
 								<div className="product__reviews">
 									<h1 className="review__title">
 										Testimonials

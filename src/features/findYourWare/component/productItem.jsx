@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-
 import NikeAir from '../../../assets/images/Nike-Air-Force.png';
 import NikeAirMax from '../../../assets/images/Nike-Air-Max.png';
 import NikeWaffle from '../../../assets/images/Nike-Waffle-Debut.png';
@@ -10,8 +9,18 @@ import Tatum from '../../../assets/images/Tatum-1.png';
 import NikeK from '../../../assets/images/KD16-EP.png';
 import Popup from './openPopUp';
 
-const ProductItem = ({ product }) => {
-	const [showPopup, setShowPopup] = useState(false);
+const ProductItem = ({ product, active = '' }) => {
+	const [isActive, setIsActive] = useState(false);
+
+	const openPopup = () => {
+		setIsActive(true);
+	};
+
+	const closePopup = () => {
+		setIsActive(false);
+	};
+
+	const handleOverlayClick = () => {};
 
 	const imageMapper = {
 		NikeAir: NikeAir,
@@ -24,43 +33,41 @@ const ProductItem = ({ product }) => {
 		NikeK: NikeK,
 	};
 
-	const togglePopup = () => {
-		setShowPopup(!showPopup);
-	};
-
 	return (
-		<div
-			className="flex carousel__wrapper justify__content--center border-none flex-direction--column cursor--pointer"
-			onClick={togglePopup}
-		>
-			<div className="carousel-images__wrapper flex justify__content--center">
-				<img
-					src={imageMapper[product.imageUrl]}
-					alt="productImage"
-					className="carousel-image"
-				/>
+		<>
+			<div
+				className="flex carousel__wrapper justify__content--center border-none flex-direction--column cursor--pointer"
+				onClick={openPopup}
+			>
+				<div className="carousel-images__wrapper flex justify__content--center">
+					<img
+						src={imageMapper[product.imageUrl]}
+						alt="productImage"
+						className="carousel-image"
+					/>
+				</div>
+
+				<div className="product__name-wrapper">
+					<p className="product__name">{product.productName}</p>
+				</div>
+
+				<div className="size__chart width--full flex justify__content--center flex-direction--row">
+					<button className="size__button cursor--pointer">S</button>
+					<button className="size__button cursor--pointer">M</button>
+					<button className="size__button cursor--pointer">L</button>
+				</div>
 			</div>
 
-			<div className="product__name-wrapper">
-				<p className="product__name">{product.productName}</p>
-			</div>
-
-			<div className="size__chart width--full flex justify__content--center flex-direction--row">
-				<button className="size__button cursor--pointer">S</button>
-				<button className="size__button cursor--pointer">M</button>
-				<button className="size__button cursor--pointer">L</button>
-			</div>
-
-			<div className="popUp__wrap">
-				{showPopup && (
+			<div className="popUp__wrap" onClick={handleOverlayClick}>
+				{isActive && (
 					<Popup
 						text="Pop Up"
-						closePopup={togglePopup}
+						closePopup={closePopup}
 						product={product}
 					/>
 				)}
 			</div>
-		</div>
+		</>
 	);
 };
 

@@ -17,14 +17,14 @@ const DashboardContainer = () => {
 	};
 
 	return (
-		<div className="dashboard">
+		<div className="dashboard position--relative">
 			<TopHeader
 				menu={Menus}
 				handleMenuClick={handleMenuClick}
 				showButton
 			/>
 
-			<div className="top__dots--icon">
+			<div className="top__dots--icon position--absolute">
 				<DotsIcon />
 			</div>
 			<div className="container">
@@ -80,10 +80,10 @@ const DashboardContainer = () => {
 					</button>
 				</div>
 			</section>
-			<div className="left-dots__icon">
+			<div className="left-dots__icon position--absolute">
 				<DotsIcon />
 			</div>
-			<div className="right-dots__icon">
+			<div className="right-dots__icon position--absolute">
 				<DotsIcon />
 			</div>
 		</div>
