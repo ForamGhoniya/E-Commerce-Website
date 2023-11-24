@@ -64,15 +64,15 @@ const ProductDetails = () => {
 			</div>
 
 			<div className="container">
-				<div className="product-image__wrap loader__position">
-					{!loading && (
+				{!loading && (
+					<div className="product-image__wrap loader__position">
 						<img
 							src={imageMapper[productData.imageUrl]}
 							alt="product"
 							className="product-image width--full"
 						/>
-					)}
-				</div>
+					</div>
+				)}
 				{loading && (
 					<div className="loader__wrapper width--full flex justify__content--center">
 						<Spinner />
