@@ -4,6 +4,7 @@ import MyCarousel from '../../findYourWare/component/slickCarousel';
 import JSONDATA from '../../../JSON/PRODUCT.json';
 import Spinner from '../../../shared/spinner/spinner';
 import { useNavigate } from 'react-router-dom';
+import { isEmpty } from 'lodash';
 
 const FindYourWare = () => {
 	const navigate = useNavigate();
@@ -31,9 +32,9 @@ const FindYourWare = () => {
 	}, []);
 
 	return (
-		<div className="main__wrapper dashboard position--relative">
+		<div className="main__wrapper  dashboard position--relative">
 			<div className="logo">
-				<TopHeader menu={[]} titleClassName="font--bold" />
+				<TopHeader titleClassName="font--bold" />
 			</div>
 
 			<div className="heading__wrapper">
@@ -48,7 +49,13 @@ const FindYourWare = () => {
 				</div>
 			)}
 
-			{!loading && (
+			{!loading && isEmpty(productData) && (
+				<div className="all-products-loader width--full flex justify__content--center">
+					<p className="not-found__massage">{'No Found Product '}</p>
+				</div>
+			)}
+
+			{!loading && !isEmpty(productData) && (
 				<>
 					<div className="find-ware width--full display-flex justify__content--end flex-direction--column ">
 						<MyCarousel products={productData} />

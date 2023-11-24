@@ -106,7 +106,10 @@ const AllProductsContainer = () => {
 						</p>
 					</div>
 				)}
-				{!loading && <ProductCarousel products={filteredProducts} />}
+
+				{!loading && !isEmpty(filteredProducts) && (
+					<ProductCarousel products={filteredProducts} />
+				)}
 			</div>
 		</div>
 	);

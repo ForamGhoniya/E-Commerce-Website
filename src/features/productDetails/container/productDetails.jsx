@@ -15,6 +15,7 @@ import NikeP from '../../../assets/images/Nike-p.png';
 import NikeESeris from '../../../assets/images/Nike-E-Series.png';
 import Tatum from '../../../assets/images/Tatum-1.png';
 import NikeK from '../../../assets/images/KD16-EP.png';
+import { isEmpty } from 'lodash';
 
 const ProductDetails = () => {
 	const navigate = useNavigate();
@@ -64,22 +65,29 @@ const ProductDetails = () => {
 			</div>
 
 			<div className="container">
-				{!loading && (
-					<div className="product-image__wrap  position--absolute loader__position">
-						<img
-							src={imageMapper[productData.imageUrl]}
-							alt="product"
-							className="product-image width--full"
-						/>
+				{!loading && isEmpty(productData) && (
+					<div className="all-products-loader width--full flex justify__content--center">
+						<p className="not-found__massage">
+							{'No Found Product '}
+						</p>
 					</div>
 				)}
+
 				{loading && (
 					<div className="loader__wrapper width--full flex justify__content--center">
 						<Spinner />
 					</div>
 				)}
-				{!loading && (
+
+				{!loading && !isEmpty(productData) && (
 					<>
+						<div className="product-image__wrap  position--absolute loader__position">
+							<img
+								src={imageMapper[productData.imageUrl]}
+								alt="product"
+								className="product-image width--full"
+							/>
+						</div>
 						<div className="product-detail__wrap">
 							<div className="product-detail-title">
 								<h1 className="product--name__display">

@@ -9,7 +9,7 @@ import Tatum from '../../../assets/images/Tatum-1.png';
 import NikeK from '../../../assets/images/KD16-EP.png';
 import Popup from './openPopUp';
 
-const ProductItem = ({ product, active = '' }) => {
+const ProductItem = ({ product }) => {
 	const [isActive, setIsActive] = useState(false);
 
 	const openPopup = () => {
