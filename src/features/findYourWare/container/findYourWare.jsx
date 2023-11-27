@@ -12,7 +12,6 @@ const FindYourWare = () => {
 	const [loading, setLoading] = useState(true);
 	const [productData, setProductData] = useState([]);
 	const [productDetail, setProductDetails] = useState({});
-
 	const [isPopUpOpen, setIsPopUpOpen] = useState(false);
 
 	const handleNextPageClick = () => {
