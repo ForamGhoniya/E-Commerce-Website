@@ -4,7 +4,7 @@ import 'slick-carousel/slick/slick.css';
 import 'slick-carousel/slick/slick-theme.css';
 import ProductItem from '../../findYourWare/component/productItem';
 
-const MyCarousel = ({ products }) => {
+const MyCarousel = ({ products, handleOpenModal }) => {
 	const settings = {
 		centerMode: true,
 		centerPadding: '100px',
@@ -19,16 +19,16 @@ const MyCarousel = ({ products }) => {
 	};
 
 	return (
-		<div className="slick-carousel">
+		<div className="slick-carousel ">
 			<Slider {...settings}>
-				{products.map((product, index) => {
-					return (
-						<ProductItem
-							key={`${product.id}-${index}`}
-							product={product}
-						/>
-					);
-				})}
+				{products.map((product, index) => (
+					<div
+						key={`${product.id}-${index}`}
+						onClick={() => handleOpenModal(product.id, product)}
+					>
+						<ProductItem product={product} />
+					</div>
+				))}
 			</Slider>
 		</div>
 	);

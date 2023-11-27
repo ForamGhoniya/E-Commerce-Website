@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import NikeAir from '../../../assets/images/Nike-Air-Force.png';
 import NikeAirMax from '../../../assets/images/Nike-Air-Max.png';
 import NikeWaffle from '../../../assets/images/Nike-Waffle-Debut.png';
@@ -7,21 +7,8 @@ import NikeP from '../../../assets/images/Nike-p.png';
 import NikeESeris from '../../../assets/images/Nike-E-Series.png';
 import Tatum from '../../../assets/images/Tatum-1.png';
 import NikeK from '../../../assets/images/KD16-EP.png';
-import Popup from './openPopUp';
 
 const ProductItem = ({ product }) => {
-	const [isActive, setIsActive] = useState(false);
-
-	const openPopup = () => {
-		setIsActive(true);
-	};
-
-	const closePopup = () => {
-		setIsActive(false);
-	};
-
-	const handleOverlayClick = () => {};
-
 	const imageMapper = {
 		NikeAir: NikeAir,
 		NikeAirMax: NikeAirMax,
@@ -35,10 +22,7 @@ const ProductItem = ({ product }) => {
 
 	return (
 		<>
-			<div
-				className="flex carousel__wrapper justify__content--center border-none flex-direction--column cursor--pointer"
-				onClick={openPopup}
-			>
+			<div className="flex carousel__wrapper justify__content--center border-none flex-direction--column cursor--pointer">
 				<div className="carousel-images__wrapper flex justify__content--center">
 					<img
 						src={imageMapper[product.imageUrl]}
@@ -56,16 +40,6 @@ const ProductItem = ({ product }) => {
 					<button className="size__button cursor--pointer">M</button>
 					<button className="size__button cursor--pointer">L</button>
 				</div>
-			</div>
-
-			<div className="popUp__wrap" onClick={handleOverlayClick}>
-				{isActive && (
-					<Popup
-						text="Pop Up"
-						closePopup={closePopup}
-						product={product}
-					/>
-				)}
 			</div>
 		</>
 	);

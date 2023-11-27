@@ -25,7 +25,6 @@ const AllProductItem = ({ product }) => {
 	};
 
 	const handlePageClick = () => {
-		console.log(product, 'product');
 		navigate(`/productDetails/${product.id}`);
 	};
 

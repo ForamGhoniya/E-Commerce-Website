@@ -85,7 +85,7 @@ const ProductDetails = () => {
 							<img
 								src={imageMapper[productData.imageUrl]}
 								alt="product"
-								className="product-image width--full"
+								className="product-image width--full animate__animated animate__backInRight"
 							/>
 						</div>
 						<div className="product-detail__wrap">
