@@ -5,6 +5,7 @@ import ProductCarousel from '../components/allProductsCarousel';
 import JSONDATA from '../../../JSON/PRODUCT.json';
 import Spinner from '../../../shared/spinner/spinner';
 import { isEmpty } from 'lodash';
+import NotFoundProducts from '../../productDetails/component/noProductFound';
 
 const AllProductsContainer = () => {
 	const [loading, setLoading] = useState(true);
@@ -99,13 +100,7 @@ const AllProductsContainer = () => {
 					</div>
 				)}
 
-				{!loading && isEmpty(filteredProducts) && (
-					<div className="all-products-loader width--full flex justify__content--center">
-						<p className="not-found__massage">
-							{'No Found Product '}
-						</p>
-					</div>
-				)}
+				{!loading && isEmpty(filteredProducts) && <NotFoundProducts />}
 
 				{!loading && !isEmpty(filteredProducts) && (
 					<ProductCarousel products={filteredProducts} />

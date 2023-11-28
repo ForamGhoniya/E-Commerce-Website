@@ -36,11 +36,11 @@ const Popup = ({ product, handleCloseModal }) => {
 				</div>
 
 				<div className="display-flex popUp_wrap width--full justify__content--center">
-					<div className="carousel-images__wrapper flex justify__content--center">
+					<div className="carousel-images__wrapper image-container flex justify__content--center">
 						<img
 							src={imageMapper[product.imageUrl] || ''}
 							alt="productImage"
-							className="carousel-image"
+							className="carousel-image "
 						/>
 					</div>
 

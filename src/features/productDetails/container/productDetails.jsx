@@ -16,6 +16,8 @@ import NikeESeris from '../../../assets/images/Nike-E-Series.png';
 import Tatum from '../../../assets/images/Tatum-1.png';
 import NikeK from '../../../assets/images/KD16-EP.png';
 import { isEmpty } from 'lodash';
+import ProductSubDetails from '../component/productSubDetails';
+import NotFoundProducts from '../component/noProductFound';
 
 const ProductDetails = () => {
 	const navigate = useNavigate();
@@ -54,7 +56,7 @@ const ProductDetails = () => {
 	return (
 		<div className="main__wrapper dashboard position--relative">
 			<div className="logo">
-				<TopHeader menu={[]} />
+				<TopHeader />
 			</div>
 
 			<div
@@ -65,13 +67,7 @@ const ProductDetails = () => {
 			</div>
 
 			<div className="container">
-				{!loading && isEmpty(productData) && (
-					<div className="all-products-loader width--full flex justify__content--center">
-						<p className="not-found__massage">
-							{'No Found Product '}
-						</p>
-					</div>
-				)}
+				{!loading && isEmpty(productData) && <NotFoundProducts />}
 
 				{loading && (
 					<div className="loader__wrapper width--full flex justify__content--center">
@@ -88,45 +84,9 @@ const ProductDetails = () => {
 								className="product-image width--full animate__animated animate__backInRight"
 							/>
 						</div>
-						<div className="product-detail__wrap">
-							<div className="product-detail-title">
-								<h1 className="product--name__display">
-									{productData.productName}
-								</h1>
-								<h1 className="detail-title">
-									Good Shoes takes you
-								</h1>
-								<h1 className="detail-title second-title">
-									Good Places
-								</h1>
-								<p className="details">
-									Step into good shoes, and you'll embark on a
-									journey to incredible destinations.
-									<br />
-									Your choice of footwear isn't just about
-									comfort;
-									<br />
-									it's a passport to adventure. So, lace up
-									your dreams and stride towards a world of
-									endless possibilities,
-									<br />
-									one stylish step at a time.
-								</p>
-							</div>
-
-							<div className="detail-button-wrap ">
-								<button className="shop-now-button flex justify__content--center cursor--pointer">
-									SHOP NOW
-								</button>
-							</div>
-						</div>
+						<ProductSubDetails />
 						<div className="product-reviews__wrap">
 							<div className="user-reviews__wrap width--full position--relative">
-								<div className="product__reviews">
-									<h1 className="review__title">
-										Testimonials
-									</h1>
-								</div>
 								<Testimonials />
 							</div>
 						</div>

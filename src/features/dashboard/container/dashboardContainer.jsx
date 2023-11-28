@@ -3,7 +3,7 @@ import { DotsIcon } from '../../../shared/icons/icons';
 import TopHeader from '../../../shared/topHeader/topHeader';
 import { useNavigate } from 'react-router-dom';
 import { Menus } from '../../../shared/constants/constants';
-import DashboardContact from '../../allProducts/components/dashboardContent';
+import DashboardContact from '../componant/dashboardContent';
 
 const DashboardContainer = () => {
 	const navigate = useNavigate();

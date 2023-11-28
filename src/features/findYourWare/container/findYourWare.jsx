@@ -6,6 +6,7 @@ import Spinner from '../../../shared/spinner/spinner';
 import { useNavigate } from 'react-router-dom';
 import { isEmpty } from 'lodash';
 import Popup from '../component/openPopUp';
+import NotFoundProducts from '../../productDetails/component/noProductFound';
 
 const FindYourWare = () => {
 	const navigate = useNavigate();
@@ -13,10 +14,6 @@ const FindYourWare = () => {
 	const [productData, setProductData] = useState([]);
 	const [productDetail, setProductDetails] = useState({});
 	const [isPopUpOpen, setIsPopUpOpen] = useState(false);
-
-	const handleNextPageClick = () => {
-		navigate('/allProducts');
-	};
 
 	const fetchData = async () => {
 		try {
@@ -58,11 +55,7 @@ const FindYourWare = () => {
 					</div>
 				)}
 
-				{!loading && isEmpty(productData) && (
-					<div className="all-products-loader width--full flex justify__content--center">
-						<p className="not-found__massage">No Found Product</p>
-					</div>
-				)}
+				{!loading && isEmpty(productData) && <NotFoundProducts />}
 
 				{!loading && !isEmpty(productData) && (
 					<>
@@ -78,7 +71,7 @@ const FindYourWare = () => {
 						<div className="product-button__wrapper flex justify__content--center">
 							<button
 								className="product-button cursor--pointer border--none"
-								onClick={handleNextPageClick}
+								onClick={() => navigate('/allProducts')}
 							>
 								ALL PRODUCTS
 							</button>
