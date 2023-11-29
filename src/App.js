@@ -8,6 +8,7 @@ import AllProductsContainer from './features/allProducts/container/allProductsCo
 import WOW from 'wowjs';
 import 'animate.css/animate.min.css';
 import { useEffect } from 'react';
+import Testimonial from './features/testimonial/testimonial';
 
 function App() {
 	useEffect(() => {
@@ -20,6 +21,7 @@ function App() {
 			<Routes>
 				<Route path="/" element={<DashboardContainer />} />
 				<Route path="/product" element={<AllProductsContainer />} />
+				<Route path="/test" element={<Testimonial />} />
 				<Route path=" /home" element={<DashboardContainer />} />
 				<Route path="/allProducts" element={<AllProductsContainer />} />
 				<Route path="/findYourWare" element={<FindYourWare />} />

@@ -1,33 +1,34 @@
 import React, { useEffect, useState } from 'react';
-import TopHeader from '../../../shared/topHeader/topHeader';
-import DropDown from '../../allProducts/components/dropDown';
-import ProductCarousel from '../components/allProductsCarousel';
-import JSONDATA from '../../../JSON/PRODUCT.json';
-import Spinner from '../../../shared/spinner/spinner';
+import TopHeader from '../../shared/topHeader/topHeader';
+import DropDown from '../allProducts/components/dropDown';
+import ProductCarousel from '../allProducts/components/allProductsCarousel';
+// import JSONDATA from '../../JSON/PRODUCT.json';
+import Spinner from '../../shared/spinner/spinner';
 import { isEmpty } from 'lodash';
-import NotFoundProducts from '../../productDetails/component/noProductFound';
+import NotFoundProducts from '../productDetails/component/noProductFound';
+import axios from 'axios';
 
-const AllProductsContainer = () => {
+const Testimonial = () => {
 	const [loading, setLoading] = useState(true);
 	const [productData, setProductData] = useState([]);
 	const [selectedGender, setSelectedGender] = useState('');
 	const [selectedPrice, setSelectedPrice] = useState('');
 	const [selectedCategory, setSelectedCategory] = useState('');
 	const [filteredProducts, setFilteredProducts] = useState([]);
+	console.log(filteredProducts);
 
 	const fetchData = async () => {
 		try {
-			setTimeout(() => {
-				setProductData(JSONDATA);
-				setFilteredProducts(JSONDATA);
-				setLoading(false);
-			}, 1000);
-		} catch (error) {
-			console.error('Error fetching data:', error);
+			const res = await axios.get('https://dummyjson.com/products');
+
+			setProductData(res.data.products);
+			setFilteredProducts(res.data.products);
 			setLoading(false);
+		} catch (error) {
+			setLoading(false);
+			console.error('Error fetching data:', error);
 		}
 	};
-
 	useEffect(() => {
 		fetchData();
 	}, []);
@@ -99,8 +100,8 @@ const AllProductsContainer = () => {
 						<Spinner />
 					</div>
 				)}
-				{!loading && isEmpty(filteredProducts) && <NotFoundProducts />}
 
+				{!loading && isEmpty(filteredProducts) && <NotFoundProducts />}
 				{!loading && !isEmpty(filteredProducts) && (
 					<ProductCarousel products={filteredProducts} />
 				)}
@@ -108,5 +109,4 @@ const AllProductsContainer = () => {
 		</div>
 	);
 };
-
-export default AllProductsContainer;
+export default Testimonial;

@@ -42,7 +42,7 @@ const Menus = [
 	},
 	{
 		name: 'Testimonials',
-		route: '/',
+		route: '/test',
 	},
 ];
 
